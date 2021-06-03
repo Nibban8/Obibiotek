@@ -1,23 +1,29 @@
-import logo from './logo.svg';
 import './App.css';
+
+import { Button } from 'react-bootstrap';
+import Navigation from './components/Navigation';
+
+import helix from './img/helix.svg';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      {/* Barra de navegacion */}
+
+      <Navigation />
+
+      {/* Seccion hero */}
+
+      <div className='hero'>
+        <div className='text'>
+          {/* Confiables , Seguros , de calidad */}
+          <h1 className=''>Diagnosticos confiables</h1>
+          <p>Sin necesidad maquinaria cara y compleja </p>
+          <p>
+            <Button size='lg'>Productos</Button>
+          </p>
+        </div>
+      </div>
     </div>
   );
 }
