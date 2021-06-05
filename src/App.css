@@ -1,3 +1,15 @@
+body::-webkit-scrollbar {
+  width: 0.25rem;
+}
+
+body::-webkit-scrollbar-track {
+  background: #1e1e24;
+}
+
+body::-webkit-scrollbar-thumb {
+  background: #087861;
+}
+
 .hero {
   background-color: #071222;
   background-image: url('./img/helix.svg');
@@ -15,10 +27,15 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+
+  scroll-snap-align: start;
 }
 
 .hero p {
   font-size: 24px;
+  width: 100%;
+  display: flex;
+  justify-content: space-evenly;
 }
 
 .hero h1 {
@@ -31,8 +48,8 @@
 }
 
 .hero .text {
-  height: 40vh;
-  width: 100vw;
+  height: 60vh;
+  width: 100%;
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
@@ -41,22 +58,19 @@
 
 @media (min-width: 993px) {
   .hero {
+    height: 70vh;
     background-position: bottom;
-    background-size: contain;
-    padding-right: 30%;
   }
 
-  .hero .text {
-    width: 70vw;
-    justify-self: flex-start;
-    justify-content: center;
-    padding-bottom: 4rem;
-  }
   .hero p {
     font-size: 36px;
   }
 
   .hero h1 {
     font-size: 64px;
+  }
+
+  .hero .text {
+    padding-top: 4rem;
   }
 }

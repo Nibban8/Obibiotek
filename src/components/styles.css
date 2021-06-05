@@ -11,7 +11,7 @@
 }
 
 .navbar {
-  background-color: transparent !important;
+  background-color: rgba(7, 18, 34, 0.9) !important;
   padding: 1rem;
 }
 
@@ -23,3 +23,104 @@
   font-size: 20px;
   color: #f2f9ff;
 }
+
+.productos {
+  padding: 0 !important;
+}
+
+.producto {
+  height: 100vh;
+  text-align: center;
+}
+
+.producto .imagen {
+  height: 50%;
+  background-size: auto;
+  background-position: center;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+}
+
+.producto .descripcion {
+  height: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  flex-direction: column;
+
+  background-color: rgba(7, 18, 34, 0.95);
+  color: #f2f9ff;
+  font-weight: 500;
+}
+
+.descripcion {
+  font-size: 18px;
+  padding: 4rem !important;
+}
+
+.frag {
+  background-image: url('../img/box-frag.png');
+}
+
+.ros {
+  background-image: url('../img/ROS.jpg');
+  background-position: center !important;
+  background-size: cover !important;
+}
+
+.heading {
+  font-size: 36px;
+}
+
+.links {
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+  margin: 1rem;
+}
+
+.wide-btn {
+  width: 100%;
+  margin: 5px;
+  font-size: 18px !important;
+}
+
+.wide-btn svg {
+  margin-left: 5px;
+  width: 22px;
+  height: 22px;
+}
+
+@media (min-width: 993px) {
+  .descripcion {
+    padding: 0 30% !important;
+  }
+
+  .descripcion h2 {
+    font-size: 48px;
+  }
+
+  .descripcion p {
+    font-size: 24px;
+  }
+  .wide-btn {
+    font-size: 24px !important;
+  }
+}
+
+html {
+  scroll-snap-type: y proximity;
+}
+
+.producto {
+  scroll-snap-align: start;
+}
+
+/* .container {
+  scroll-snap-type: y mandatory;
+}
+
+.child {
+  scroll-snap-align: start;
+} */

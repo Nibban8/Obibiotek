@@ -1,9 +1,9 @@
 import './App.css';
 
 import { Button } from 'react-bootstrap';
-import Navigation from './components/Navigation';
 
-import helix from './img/helix.svg';
+import Navigation from './components/Navigation';
+import Producto from './components/Producto';
 
 function App() {
   return (
@@ -20,10 +20,15 @@ function App() {
           <h1 className=''>Diagnosticos confiables</h1>
           <p>Sin necesidad maquinaria cara y compleja </p>
           <p>
+            <Button size='lg'>Nosotros</Button>
             <Button size='lg'>Productos</Button>
           </p>
         </div>
       </div>
+
+      {/* Productos */}
+
+      <Producto />
     </div>
   );
 }
