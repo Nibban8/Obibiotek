@@ -1,34 +1,18 @@
 import './App.css';
 
+import React, { useRef } from 'react';
 import { Button } from 'react-bootstrap';
+import { CreditCard2Back } from 'react-bootstrap-icons';
+import useScrollSnap from 'react-use-scroll-snap';
 
 import Navigation from './components/Navigation';
-import Producto from './components/Producto';
+import Home from './views/Home';
 
 function App() {
   return (
     <div>
-      {/* Barra de navegacion */}
-
       <Navigation />
-
-      {/* Seccion hero */}
-
-      <div className='hero'>
-        <div className='text'>
-          {/* Confiables , Seguros , de calidad */}
-          <h1 className=''>Diagnosticos confiables</h1>
-          <p>Sin necesidad maquinaria cara y compleja </p>
-          <p>
-            <Button size='lg'>Nosotros</Button>
-            <Button size='lg'>Productos</Button>
-          </p>
-        </div>
-      </div>
-
-      {/* Productos */}
-
-      <Producto />
+      <Home />
     </div>
   );
 }
