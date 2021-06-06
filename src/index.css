@@ -1,13 +1,11 @@
-html {
-  scroll-behavior: auto;
-}
-
 body {
   margin: 0;
 
+  background-color: #f2f9ff;
+
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  font-family: 'Montserrat', sans-serif !important;
+  font-family: 'Open Sans', serif;
 }
 
 button {

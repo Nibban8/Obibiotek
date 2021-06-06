@@ -5,7 +5,7 @@ import { Container, Navbar, Nav } from 'react-bootstrap';
 
 export default function Navigation() {
   return (
-    <Navbar fixed='top' collapseOnSelect expand='lg' variant='dark'>
+    <Navbar collapseOnSelect expand='lg' variant='dark'>
       <Container>
         <Navbar.Brand className='brand' href='#home'>
           OBIBIO<span>TEK</span>
