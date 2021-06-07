@@ -10,13 +10,15 @@ import Footer from './components/Footer';
 import Producto from './components/Producto';
 import Frag from './views/Frag';
 import Ros from './views/Ros';
+import Productos from './views/Productos';
 
 function App() {
   return (
     <div>
-      <Navigation />
       <Router>
+        <Navigation />
         <Switch>
+          <Route path='/productos' exact component={() => <Productos />} />
           <Route path='/productos/frag' exact component={() => <Frag />} />
           <Route path='/productos/ros' exact component={() => <Ros />} />
           <Route path='/' exact component={() => <Home />} />
