@@ -4,7 +4,6 @@
   background-repeat: no-repeat;
   background-position: left;
   background-size: cover;
-  background-blend-mode: difference;
 
   color: #f2f9ff;
 
@@ -158,10 +157,6 @@
   /* .descripcion {
     padding: 0 30% !important;
   } */
-
-  .hero {
-    background-blend-mode: hard-light;
-  }
 
   .img-container {
     position: relative;

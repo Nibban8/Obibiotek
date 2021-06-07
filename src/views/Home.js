@@ -1,11 +1,17 @@
 import './Home.css';
 
-import React from 'react';
+import React, { useRef } from 'react';
 import { Button } from 'react-bootstrap';
 import { CreditCard2Back } from 'react-bootstrap-icons';
 import { Link } from 'react-router-dom';
 
 export default function Home() {
+  const productosRef = useRef(null);
+
+  const handleProductos = () => {
+    productosRef.current.scrollIntoView();
+  };
+
   return (
     <div>
       {/* Seccion hero */}
@@ -22,7 +28,11 @@ export default function Home() {
             <Button variant='light' className='wide-btn'>
               Nosotros
             </Button>
-            <Button variant='light' className='wide-btn'>
+            <Button
+              onClick={handleProductos}
+              variant='light'
+              className='wide-btn'
+            >
               Productos
             </Button>
           </div>
@@ -31,7 +41,7 @@ export default function Home() {
 
       {/* Productos */}
 
-      <div className='productos'>
+      <div id='productos' ref={productosRef} className='productos'>
         <div className='producto'>
           <div className='img-container'>
             <div className='imagen frag'></div>
@@ -46,16 +56,16 @@ export default function Home() {
               ADN de una manera rápida, sencilla y reproducible
             </p>
             <div className='links'>
-              <Link>
+              <Link to='/productos/frag'>
                 <Button variant='dark' className='wide-btn'>
                   Ver mas
                 </Button>
               </Link>
-              <Link>
-                <Button variant='dark' className='wide-btn'>
+              <a href='https://buy.stripe.com/test_dR628o2nz8Vz9X2eUW'>
+                <Button to='google.com' variant='dark' className='wide-btn'>
                   Comprar <CreditCard2Back />
                 </Button>
-              </Link>
+              </a>
             </div>
           </div>
         </div>
@@ -71,16 +81,16 @@ export default function Home() {
               leucocitos y espermatozoides anormales en el eyaculado
             </p>
             <div className='links'>
-              <Link>
+              <Link to='/productos/ros'>
                 <Button variant='dark' className='wide-btn'>
                   Ver mas
                 </Button>
               </Link>
-              <Link>
+              <a href='https://buy.stripe.com/test_7sIbIYbY9fjXd9e145'>
                 <Button variant='dark' className='wide-btn'>
                   Comprar <CreditCard2Back />
                 </Button>
-              </Link>
+              </a>
             </div>
           </div>
         </div>

@@ -12,6 +12,7 @@ export default function Producto({ producto }) {
     descripcion,
     funcionamiento,
     dosificacion,
+    url,
   } = producto;
 
   return (
@@ -26,10 +27,13 @@ export default function Producto({ producto }) {
           <div className='precio '>{`$ ${parseFloat(precio).toFixed(
             2
           )} MXN`}</div>
+
           <div className='comprar mb-4'>
-            <Button variant='dark' className='wide-btn'>
-              Comprar <CreditCard2Back />
-            </Button>
+            <a href={url}>
+              <Button variant='dark' className='wide-btn'>
+                Comprar <CreditCard2Back />
+              </Button>
+            </a>
           </div>
           <div className='contenido'>
             <span>Contenido:</span>

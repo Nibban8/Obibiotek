@@ -20,6 +20,7 @@ export default function Frag() {
       'Se prepara la solución desnaturalizante HCL al 37%, aplicar por 7 minutos',
       'La solución de lisis se aplica por 5 minutos',
     ],
+    url: 'https://buy.stripe.com/test_dR628o2nz8Vz9X2eUW',
   };
 
   return <Producto producto={frag} />;

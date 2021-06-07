@@ -9,6 +9,7 @@ import Home from './views/Home';
 import Footer from './components/Footer';
 import Producto from './components/Producto';
 import Frag from './views/Frag';
+import Ros from './views/Ros';
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
       <Router>
         <Switch>
           <Route path='/productos/frag' exact component={() => <Frag />} />
+          <Route path='/productos/ros' exact component={() => <Ros />} />
           <Route path='/' exact component={() => <Home />} />
         </Switch>
       </Router>
