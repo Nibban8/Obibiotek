@@ -7,7 +7,7 @@ import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import Navigation from './components/Navigation';
 import Home from './views/Home';
 import Footer from './components/Footer';
-import Producto from './components/Producto';
+
 import Frag from './views/Frag';
 import Ros from './views/Ros';
 import Productos from './views/Productos';

@@ -32,23 +32,15 @@ export default function Footer() {
         <div class='col-6 col-md'>
           <h5>Acerca de</h5>
           <ul class='list-unstyled text-small'>
-            <li>
-              <a>Nosotros</a>
-            </li>
-            <li>
-              <a>Contacto</a>
-            </li>
+            <li>Nosotros</li>
+            <li>Contacto</li>
           </ul>
         </div>
         <div class='col-6 col-md'>
           <h5>Recursos</h5>
           <ul class='list-unstyled text-small'>
-            <li>
-              <a>Instructivos</a>
-            </li>
-            <li>
-              <a>Soporte</a>
-            </li>
+            <li>Instructivos</li>
+            <li>Soporte</li>
           </ul>
         </div>
 
