@@ -51,7 +51,9 @@
   align-self: center;
   display: flex;
   flex-direction: column;
-  gap: 4rem;
+  gap: 2rem !important;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
 }
 
 .func,
