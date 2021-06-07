@@ -20,13 +20,13 @@ export default function Home() {
             maquinaria cara
           </p>
           <div className='links'>
-            <Link to='/nosotros'>
+            <Link className='wide-btn' to='/nosotros'>
               <Button variant='light' className='wide-btn'>
                 Nosotros
               </Button>
             </Link>
 
-            <Link to='/productos'>
+            <Link className='wide-btn' to='/productos'>
               <Button variant='light' className='wide-btn'>
                 Productos
               </Button>
