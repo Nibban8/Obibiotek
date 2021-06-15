@@ -14,9 +14,9 @@ export default function Home() {
       <div className='hero'>
         <div className='text'>
           {/* Confiables , Seguros , de calidad */}
-          <h1 className=''>Kits de analisis de ADN</h1>
+          <h1 className=''>Kits de análisis de ADN</h1>
           <p>
-            Entrega diasgnosticos confiables a tus clientes y ahorra en
+            Entrega diagnósticos confiables a tus clientes y ahorra en
             maquinaria cara
           </p>
           <div className='links'>

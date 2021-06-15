@@ -42,7 +42,7 @@ export default function Productos() {
         <div className='descripcion p-4'>
           <h2 className='heading'>Sperm ROS</h2>
           <p>
-            Kit para deteccion exceso de aniones superóxido causados por
+            Kit para detección exceso de aniones superóxido causados por
             leucocitos y espermatozoides anormales en el eyaculado
           </p>
           <div className='links'>

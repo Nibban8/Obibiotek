@@ -5,7 +5,7 @@ import Producto from '../components/Producto';
 export default function Frag() {
   const frag = {
     nombre: 'Sperm Frag',
-    precio: 2300.0,
+    precio: 200.0,
     imagen: DNA,
     contenido: [
       '12 x Laminillas pre-tratadas',

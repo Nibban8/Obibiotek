@@ -18,15 +18,16 @@ export default function Producto({ producto }) {
   return (
     <div>
       <Container className='primero'>
-        <div className='imagen'>
+        <div style={{ alignSelf: 'center' }} className='imagen'>
           <Image src={imagen} fluid />
         </div>
         <div className='info'>
           <h1 className='nombre'>{nombre}</h1>
           <div className='desc'>{descripcion}</div>
-          <div className='precio '>{`$ ${parseFloat(precio).toFixed(
-            2
-          )} MXN`}</div>
+          <div
+            style={{ textTransform: 'lowercase' }}
+            className='precio '
+          >{`$ ${parseFloat(precio).toFixed(2)} DLL`}</div>
 
           <div className='comprar mb-4'>
             <a href={url}>
@@ -59,7 +60,7 @@ export default function Producto({ producto }) {
               ))}
             </ul>
             <Button variant='light' className='wide-btn'>
-              Instrucciones
+              Instructivo
             </Button>
           </div>
         </Container>

@@ -6,12 +6,12 @@ import ROS from '../img/ROS.jpg';
 export default function Ros() {
   const ros = {
     nombre: 'Sperm ROS',
-    precio: 800.0,
+    precio: 200.0,
     imagen: ROS,
     contenido: [
       '12 x Laminillas pre-tratadas',
       '12 x Tubos Eppendorf® con gel de agarosa de bajo punto de fusión',
-      'Botella con solucion de Lisis 120 ml',
+      'Botella con solución de Lisis 120 ml',
       'Vial con solución ácida 2.0 ml',
     ],
     descripcion:
