@@ -4,19 +4,19 @@ import icon from '../img/icon.png';
 
 export default function Footer() {
   return (
-    <footer class='container py-5'>
-      <div class='row'>
-        <div class='col-12 col-md'>
+    <footer className='container py-5'>
+      <div className='row'>
+        <div className='col-12 col-md'>
           <Image
             alt='logo'
             style={{ height: '50px', width: '50px' }}
             src={icon}
           />
-          <small class='d-block mb-3 text-muted'>© 2017–2021</small>
+          <small className='d-block mb-3 text-muted'>© 2017–2021</small>
         </div>
-        <div class='col-6 col-md'>
+        <div className='col-6 col-md'>
           <h5>Productos</h5>
-          <ul class='list-unstyled text-small'>
+          <ul className='list-unstyled text-small'>
             <li>
               <a href='https://buy.stripe.com/test_7sIbIYbY9fjXd9e145'>
                 Sperm Frag
@@ -29,23 +29,23 @@ export default function Footer() {
             </li>
           </ul>
         </div>
-        <div class='col-6 col-md'>
+        <div className='col-6 col-md'>
           <h5>Acerca de</h5>
-          <ul class='list-unstyled text-small'>
+          <ul className='list-unstyled text-small'>
             <li>Nosotros</li>
             <li>Contacto</li>
           </ul>
         </div>
-        <div class='col-6 col-md'>
+        <div className='col-6 col-md'>
           <h5>Recursos</h5>
-          <ul class='list-unstyled text-small'>
+          <ul className='list-unstyled text-small'>
             <li>Instructivos</li>
             <li>Soporte</li>
           </ul>
         </div>
 
-        <div class='col-6 col-md'></div>
-        <div class='col-6 col-md'></div>
+        <div className='col-6 col-md'></div>
+        <div className='col-6 col-md'></div>
       </div>
     </footer>
   );

@@ -2,10 +2,18 @@ body {
   margin: 0;
 
   background-color: #f2f9ff;
-
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  font-family: 'Comfortaa', cursive;
+  font-family: 'Raleway', sans-serif;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+button {
+  font-family: 'Montserrat', sans-serif;
 }
 
 button {
