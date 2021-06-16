@@ -1,6 +1,9 @@
-import React from 'react';
-import { Container, Image, ListGroup, Button } from 'react-bootstrap';
-import { CreditCard2Back } from 'react-bootstrap-icons';
+import React, { useState, useEffect } from 'react';
+import { Container, Image, ListGroup, Button, Modal } from 'react-bootstrap';
+import { CreditCard2Back, X } from 'react-bootstrap-icons';
+
+import axios from 'axios';
+
 import './producto.css';
 
 export default function Producto({ producto }) {
@@ -13,7 +16,28 @@ export default function Producto({ producto }) {
     funcionamiento,
     dosificacion,
     url,
+    pdf,
+    url_mx,
   } = producto;
+
+  const [lgShow, setLgShow] = useState(false);
+  const [buyLink, setbuyLink] = useState(url_mx);
+
+  const getGeoInfo = () => {
+    axios
+      .get('https://ipapi.co/json/')
+      .then((response) => {
+        let data = response.data;
+        data.country_code === 'MX' ? setbuyLink(url_mx) : setbuyLink(url);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  };
+
+  useEffect(() => {
+    getGeoInfo();
+  });
 
   return (
     <div>
@@ -30,7 +54,7 @@ export default function Producto({ producto }) {
           >{`$ ${parseFloat(precio).toFixed(2)} DLL`}</div>
 
           <div className='comprar mb-4'>
-            <a href={url}>
+            <a href={buyLink}>
               <Button variant='dark' className='wide-btn'>
                 Comprar <CreditCard2Back />
               </Button>
@@ -59,12 +83,40 @@ export default function Producto({ producto }) {
                 <li>{step}</li>
               ))}
             </ul>
-            <Button variant='light' className='wide-btn'>
+            <Button
+              onClick={() => setLgShow(true)}
+              variant='light'
+              className='wide-btn'
+            >
               Instructivo
             </Button>
           </div>
         </Container>
       </div>
+      <Modal
+        size='lg'
+        show={lgShow}
+        onHide={() => setLgShow(false)}
+        aria-labelledby='example-modal-sizes-title-lg'
+      >
+        <Modal.Header>
+          <Modal.Title id='example-modal-sizes-title-lg'>
+            Ficha Tecnica
+          </Modal.Title>
+          <Button onClick={() => setLgShow(false)} variant='outline-danger'>
+            <X></X>
+          </Button>
+        </Modal.Header>
+        <Modal.Body>
+          <iframe
+            title={nombre}
+            src={pdf}
+            width='100%'
+            height='480'
+            allow='autoplay'
+          ></iframe>
+        </Modal.Body>
+      </Modal>
     </div>
   );
 }

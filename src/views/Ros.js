@@ -22,7 +22,9 @@ export default function Ros() {
       'Se coloca el reactivo de Sperm ROS® para estabilizarlo a temperatura ambiente (25°C) durante 1 hora.',
       'Usar una proporción de volumen 1:1 ósea 1 ml de Sperm ROS® en 1 ml de semen licuado',
     ],
-    url: 'https://buy.stripe.com/test_7sIbIYbY9fjXd9e145',
+    url_mx: 'https://buy.stripe.com/test_00g3drcXQcvUeVa144',
+    url: 'https://buy.stripe.com/test_9AQdS5f5YfI67sIfYZ',
+    pdf: 'https://drive.google.com/file/d/1KTzxY7Z4K-afxyWMvVZPlgcfpHihKEMr/preview',
   };
 
   return <Producto producto={ros} />;

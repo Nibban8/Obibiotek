@@ -6,7 +6,7 @@ import { Button } from 'react-bootstrap';
 
 export default function Productos() {
   return (
-    <div className='productos'>
+    <div id='productos' className='productos'>
       <div className='producto'>
         <div className='img-container'>
           <div className='imagen frag'></div>
