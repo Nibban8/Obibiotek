@@ -9,7 +9,7 @@ export default function Footer() {
         <div className='col-12 col-md'>
           <Image
             alt='logo'
-            style={{ height: '50px', width: '50px' }}
+            style={{ height: '80px', width: '80px' }}
             src={icon}
           />
           <small className='d-block mb-3 text-muted'>© 2017–2021</small>

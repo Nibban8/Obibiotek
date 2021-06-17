@@ -19,3 +19,7 @@ button {
 button {
   border-radius: 2.5px !important;
 }
+
+#root {
+  overflow-x: hidden;
+}

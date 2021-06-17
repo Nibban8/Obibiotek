@@ -19,9 +19,7 @@ export default function Navigation() {
           <Nav className='me-auto'></Nav>
           <Nav>
             <Nav.Link className='active' href='#productos'>
-              <Link style={{ color: 'inherit' }} to='/productos'>
-                Productos
-              </Link>
+              Productos
             </Nav.Link>
             <Nav.Link className='active' href='#nosotros'>
               <Link style={{ color: 'inherit' }} to='/nosotros'>

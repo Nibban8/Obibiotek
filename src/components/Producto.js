@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Container, Image, ListGroup, Button, Modal } from 'react-bootstrap';
 import { CreditCard2Back, X } from 'react-bootstrap-icons';
+import { useLocation } from 'react-router-dom';
 
 import axios from 'axios';
 
@@ -23,7 +24,10 @@ export default function Producto({ producto }) {
   const [lgShow, setLgShow] = useState(false);
   const [buyLink, setbuyLink] = useState(url_mx);
 
-  const getGeoInfo = () => {
+  const { pathname } = useLocation();
+
+  useEffect(() => {
+    // Obtener el pais
     axios
       .get('https://ipapi.co/json/')
       .then((response) => {
@@ -33,11 +37,10 @@ export default function Producto({ producto }) {
       .catch((error) => {
         console.log(error);
       });
-  };
 
-  useEffect(() => {
-    getGeoInfo();
-  });
+    // Hacer scroll al tope de la pagina
+    window.scrollTo(0, 0);
+  }, [pathname, url_mx, url]);
 
   return (
     <div>

@@ -10,7 +10,9 @@ import Footer from './components/Footer';
 
 import Frag from './views/Frag';
 import Ros from './views/Ros';
-import Productos from './views/Productos';
+
+import Success from './views/Success';
+import Failure from './views/Failure';
 
 function App() {
   return (
@@ -18,7 +20,8 @@ function App() {
       <Router>
         <Navigation />
         <Switch>
-          <Route path='/productos' exact component={() => <Productos />} />
+          <Route path='/success' exact component={() => <Success />} />
+          <Route path='/failure' exact component={() => <Failure />} />
           <Route path='/productos/frag' exact component={() => <Frag />} />
           <Route path='/productos/ros' exact component={() => <Ros />} />
           <Route path='/' exact component={() => <Home />} />
