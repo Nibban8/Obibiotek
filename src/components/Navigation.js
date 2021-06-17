@@ -22,9 +22,7 @@ export default function Navigation() {
               Productos
             </Nav.Link>
             <Nav.Link className='active' href='#nosotros'>
-              <Link style={{ color: 'inherit' }} to='/nosotros'>
-                Nosotros
-              </Link>
+              Nosotros
             </Nav.Link>
           </Nav>
         </Navbar.Collapse>
