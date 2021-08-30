@@ -1,64 +1,148 @@
-import React from 'react';
-import { CreditCard2Back } from 'react-bootstrap-icons';
-import { Link } from 'react-router-dom';
+import React, { useEffect, useState } from "react";
+import {
+  CreditCard2Back,
+  GeoAltFill,
+  Whatsapp,
+  EnvelopeFill,
+  Cart,
+} from "react-bootstrap-icons";
+import { Link } from "react-router-dom";
 
-import { Button } from 'react-bootstrap';
+import { Button, Modal, Row, Col, Image } from "react-bootstrap";
+import axios from "axios";
 
 export default function Productos() {
+  const url_mx =
+    "https://www.nanogbiotec.com/producto/kit-de-fragmentacion-y-kit-ros/";
+
+  const [url_ros, setUrl_ros] = useState(
+    "https://buy.stripe.com/test_9AQdS5f5YfI67sIfYZ"
+  );
+  const [url_frag, setUrl_frag] = useState(
+    "https://buy.stripe.com/test_9AQdS5f5YfI67sIfYZ"
+  );
+
+  const [show, setShow] = useState(false);
+  const toggle = () => {
+    setShow(!show);
+  };
+
+  useEffect(() => {
+    const getContry = async () => {
+      let res = await axios.get("https://ipapi.co/json/");
+      const country = res.data.country_code;
+      if (country === "MX") {
+        setUrl_frag(url_mx);
+        setUrl_ros(url_mx);
+      }
+    };
+    getContry();
+  }, []);
+
   return (
-    <div id='productos' className='productos'>
-      <div className='producto'>
-        <div className='img-container'>
-          <div className='imagen frag'></div>
+    <div id="productos" className="productos">
+      <div className="producto">
+        <div className="img-container">
+          <div className="imagen frag"></div>
         </div>
 
-        <div className='descripcion p-4'>
-          <div className='heading'>
+        <div className="descripcion p-4">
+          <div className="heading">
             <h2>Sperm Frag</h2>
           </div>
           <p>
             Kit de diagnóstico in vitro que permite medir la fragmentación del
             ADN de una manera rápida, sencilla y reproducible
           </p>
-          <div className='links'>
-            <Link to='/productos/frag'>
-              <Button variant='dark' className='wide-btn'>
+          <div className="links">
+            <Link to="/productos/frag">
+              <Button variant="dark" className="wide-btn">
                 Ver mas
               </Button>
             </Link>
-            <a href='https://buy.stripe.com/test_dR628o2nz8Vz9X2eUW'>
-              <Button to='google.com' variant='dark' className='wide-btn'>
-                Comprar <CreditCard2Back />
-              </Button>
-            </a>
+            <Button onClick={toggle} variant="dark" className="wide-btn">
+              Comprar <CreditCard2Back />
+            </Button>
           </div>
         </div>
       </div>
 
-      <div className='producto invertido'>
-        <div className='img-container'>
-          <div className='imagen ros'></div>
+      <div className="producto invertido">
+        <div className="img-container">
+          <div className="imagen ros"></div>
         </div>
-        <div className='descripcion p-4'>
-          <h2 className='heading'>Sperm ROS</h2>
+        <div className="descripcion p-4">
+          <h2 className="heading">Sperm ROS</h2>
           <p>
             Kit para detección exceso de aniones superóxido causados por
             leucocitos y espermatozoides anormales en el eyaculado
           </p>
-          <div className='links'>
-            <Link to='/productos/ros'>
-              <Button variant='dark' className='wide-btn'>
+          <div className="links">
+            <Link to="/productos/ros">
+              <Button variant="dark" className="wide-btn">
                 Ver mas
               </Button>
             </Link>
-            <a href='https://buy.stripe.com/test_7sIbIYbY9fjXd9e145'>
-              <Button variant='dark' className='wide-btn'>
-                Comprar <CreditCard2Back />
-              </Button>
-            </a>
+
+            <Button onClick={toggle} variant="dark" className="wide-btn">
+              Comprar <CreditCard2Back />
+            </Button>
           </div>
         </div>
       </div>
+
+      <Modal show={show} onHide={toggle}>
+        <Modal.Body>
+          <Row>
+            <p>Provedor oficial en México</p>
+          </Row>
+
+          <Row>
+            <Col className="d-flex flex-column justify-content-center">
+              <Image
+                fluid
+                src="https://www.nanogbiotec.com/wp-content/uploads/2016/10/logo.png"
+              />
+            </Col>
+            <Col>
+              <div className="mb-2">
+                <GeoAltFill className="ml-2" /> Ubicacion:
+                <div>
+                  Tucidides #66 - A, Col. Vallarta San Jorge C.P.44690,
+                  Guadalajara, México
+                </div>
+              </div>
+              <div className="mb-2">
+                <EnvelopeFill className="ml-2" /> E-mail:
+                <div />
+                <a href="info@nanogbiotec.com">info@nanogbiotec.com</a>
+              </div>
+              <div className="mb-2">
+                <Whatsapp className="ml-2" /> Tel:
+                <div>
+                  <a href="tel:+521(33)19557151">+52 1 (33) 19 55 71 51</a>
+                </div>
+              </div>
+              <div className="mb-2">
+                <Cart className="ml-2" /> Web:
+                <div>
+                  <a href="https://www.nanogbiotec.com/producto/kit-de-fragmentacion-y-kit-ros/">
+                    www.nanogbiotec.com
+                  </a>
+                </div>
+              </div>
+            </Col>
+          </Row>
+        </Modal.Body>
+        <Modal.Footer>
+          <Button variant="secondary" onClick={toggle}>
+            Close
+          </Button>
+          <Button variant="primary" onClick={toggle}>
+            Comprar fuera de México
+          </Button>
+        </Modal.Footer>
+      </Modal>
     </div>
   );
 }
