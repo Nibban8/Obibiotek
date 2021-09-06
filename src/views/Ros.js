@@ -1,12 +1,14 @@
-import React from "react";
+import React, { useContext } from "react";
 import Producto from "../components/Producto";
-
+import { LocationContext } from "../locationContext";
 import ROS from "../img/ROS.jpg";
 
 export default function Ros() {
+  const { url_ros, country } = useContext(LocationContext);
+
   const ros = {
     nombre: "Sperm ROS",
-    precio: 200.0,
+    precio: country === "PE" ? "200.00" : "250.00",
     imagen: ROS,
     contenido: [
       "12 x Laminillas pre-tratadas",
@@ -22,9 +24,7 @@ export default function Ros() {
       "Se coloca el reactivo de Sperm ROS® para estabilizarlo a temperatura ambiente (25°C) durante 1 hora.",
       "Usar una proporción de volumen 1:1 ósea 1 ml de Sperm ROS® en 1 ml de semen licuado",
     ],
-    url_mx:
-      "https://www.nanogbiotec.com/producto/kit-de-fragmentacion-y-kit-ros/",
-    url: "https://buy.stripe.com/test_9AQdS5f5YfI67sIfYZ",
+    url: `${url_ros}`,
     pdf: "https://drive.google.com/file/d/1KTzxY7Z4K-afxyWMvVZPlgcfpHihKEMr/preview",
   };
 

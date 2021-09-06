@@ -1,11 +1,13 @@
-import React from "react";
+import React, { useContext } from "react";
 import DNA from "../img/DNA.jpg";
 import Producto from "../components/Producto";
+import { LocationContext } from "../locationContext";
 
 export default function Frag() {
+  const { url_frag, country } = useContext(LocationContext);
   const frag = {
     nombre: "Sperm Frag",
-    precio: 200.0,
+    precio: country === "PE" ? "200.00" : "250.00",
     imagen: DNA,
     contenido: [
       "12 x Laminillas pre-tratadas",
@@ -20,9 +22,8 @@ export default function Frag() {
       "Se prepara la solución desnaturalizante HCL al 37%, aplicar por 7 minutos",
       "La solución de lisis se aplica por 5 minutos",
     ],
-    url: "https://buy.stripe.com/test_9AQdS5f5YfI67sIfYZ",
-    url_mx:
-      "https://www.nanogbiotec.com/producto/kit-de-fragmentacion-y-kit-ros/",
+    url: `${url_frag}`,
+
     pdf: "https://drive.google.com/file/d/1Gew9rcEBeZeMq-ToF3Hyzr24QskZoE7f/preview",
   };
 

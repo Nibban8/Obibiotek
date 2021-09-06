@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext, useState } from "react";
 import {
   CreditCard2Back,
   GeoAltFill,
@@ -9,35 +9,15 @@ import {
 import { Link } from "react-router-dom";
 
 import { Button, Modal, Row, Col, Image } from "react-bootstrap";
-import axios from "axios";
+import { LocationContext } from "../locationContext";
 
 export default function Productos() {
-  const url_mx =
-    "https://www.nanogbiotec.com/producto/kit-de-fragmentacion-y-kit-ros/";
-
-  const [url_ros, setUrl_ros] = useState(
-    "https://buy.stripe.com/test_9AQdS5f5YfI67sIfYZ"
-  );
-  const [url_frag, setUrl_frag] = useState(
-    "https://buy.stripe.com/test_9AQdS5f5YfI67sIfYZ"
-  );
+  const { url_frag, url_ros, country } = useContext(LocationContext);
 
   const [show, setShow] = useState(false);
   const toggle = () => {
     setShow(!show);
   };
-
-  useEffect(() => {
-    const getContry = async () => {
-      let res = await axios.get("https://ipapi.co/json/");
-      const country = res.data.country_code;
-      if (country === "MX") {
-        setUrl_frag(url_mx);
-        setUrl_ros(url_mx);
-      }
-    };
-    getContry();
-  }, []);
 
   return (
     <div id="productos" className="productos">
@@ -60,9 +40,15 @@ export default function Productos() {
                 Ver mas
               </Button>
             </Link>
-            <Button onClick={toggle} variant="dark" className="wide-btn">
-              Comprar <CreditCard2Back />
-            </Button>
+            {country === "MX" ? (
+              <Button onClick={toggle} variant="dark" className="wide-btn">
+                Comprar <CreditCard2Back />
+              </Button>
+            ) : (
+              <Button href={url_ros} variant="dark" className="wide-btn">
+                Comprar <CreditCard2Back />
+              </Button>
+            )}
           </div>
         </div>
       </div>
@@ -83,10 +69,15 @@ export default function Productos() {
                 Ver mas
               </Button>
             </Link>
-
-            <Button onClick={toggle} variant="dark" className="wide-btn">
-              Comprar <CreditCard2Back />
-            </Button>
+            {country === "MX" ? (
+              <Button onClick={toggle} variant="dark" className="wide-btn">
+                Comprar <CreditCard2Back />
+              </Button>
+            ) : (
+              <Button href={url_frag} variant="dark" className="wide-btn">
+                Comprar <CreditCard2Back />
+              </Button>
+            )}
           </div>
         </div>
       </div>
